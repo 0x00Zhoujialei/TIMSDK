@@ -13,7 +13,8 @@ Pod::Spec.new do |spec|
   spec.authors      = 'tencent video cloud'
   spec.summary      = 'TXIMSDK_TUIKit_live_iOS_Professional'
   spec.xcconfig     = { 'VALID_ARCHS' => 'armv7 arm64 x86_64', }
-  
+ 
+  spec.static_framework = true
   spec.dependency 'TXIMSDK_iOS', '5.1.50'
   spec.dependency 'TXLiteAVSDK_Professional', '7.8.9519'
   spec.dependency 'MMLayout','0.2.0'
