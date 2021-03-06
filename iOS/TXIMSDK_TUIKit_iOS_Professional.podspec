@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = 'TXIMSDK_TUIKit_iOS_Professional'
-  spec.version      = '5.1.50'
+  spec.version      = '5.1.56'
   spec.platform     = :ios 
   spec.ios.deployment_target = '9.0'
   spec.license      = { :type => 'Proprietary',
@@ -20,7 +20,7 @@ Pod::Spec.new do |spec|
   spec.dependency 'ReactiveObjC','3.1.1'
   spec.dependency 'Toast','4.0.0'
   spec.dependency 'TXLiteAVSDK_Professional','7.8.9519'
-  spec.dependency 'TXIMSDK_iOS','5.1.50'
+  spec.dependency 'TXIMSDK_iOS','5.1.56'
   
   spec.requires_arc = true
 
