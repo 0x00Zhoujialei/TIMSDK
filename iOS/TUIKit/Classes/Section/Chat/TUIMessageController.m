@@ -502,7 +502,7 @@
     NSDictionary *extParam = @{@"entity":@{@"action":@(APNs_Business_NormalMsg),@"chatType":@(chatType),@"sender":sender,@"version":@(APNs_Version)}};
     info.ext = [TUICallUtils dictionary2JsonStr:extParam];
     if (imMsg.elemType == V2TIM_ELEM_TYPE_CUSTOM) {
-        info.desc = "自定义消息"
+        info.desc = "自定义消息";
     }
     // 发消息
     @weakify(self)
