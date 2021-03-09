@@ -532,7 +532,12 @@
     } fail:^(int code, NSString *desc) {
         @strongify(self)
         dispatch_async(dispatch_get_main_queue(), ^{
-            [THelper makeToastError:code msg:desc];
+            if (code == 6014) {
+                NSObject *delegate = (NSObject *)[UIApplication sharedApplication].delegate;
+                [delegate performSelector:@selector(presentReloginAlert)];
+            } else {
+                [THelper makeToastError:code msg:desc];
+            }
             [self changeMsg:msg status:Msg_Status_Fail];
         });
     }];
