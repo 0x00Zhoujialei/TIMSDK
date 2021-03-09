@@ -63,12 +63,12 @@
         [self.contentView addSubview:_retryView];
         
         //已读label,由于 indicator 和 error，所以默认隐藏，消息发送成功后进行显示
-//        _readReceiptLabel = [[UILabel alloc] init];
-//        _readReceiptLabel.hidden = YES;
-//        _readReceiptLabel.font = [UIFont systemFontOfSize:12];
-//        _readReceiptLabel.textColor = [UIColor d_systemGrayColor];
-//        _readReceiptLabel.lineBreakMode = NSLineBreakByCharWrapping;
-//        [self.contentView addSubview:_readReceiptLabel];
+        _readReceiptLabel = [[UILabel alloc] init];
+        _readReceiptLabel.hidden = YES;
+        _readReceiptLabel.font = [UIFont systemFontOfSize:12];
+        _readReceiptLabel.textColor = [UIColor d_systemGrayColor];
+        _readReceiptLabel.lineBreakMode = NSLineBreakByCharWrapping;
+        [self.contentView addSubview:_readReceiptLabel];
         
         self.selectionStyle = UITableViewCellSelectionStyleNone;
     }
@@ -120,7 +120,7 @@
             if(self.messageData.direction == MsgDirectionOutgoing
                && self.messageData.showReadReceipt
                && self.messageData.innerMessage.userID.length > 0){//只对发送的消息进行label显示。
-                _readReceiptLabel.hidden = NO;
+                _readReceiptLabel.hidden = YES;
             }
             
         }
