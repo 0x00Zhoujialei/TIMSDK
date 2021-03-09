@@ -674,44 +674,44 @@
 
 - (void)onLongPressMessage:(TUIMessageCell *)cell
 {
-    TUIMessageCellData *data = cell.messageData;
-    if ([data isKindOfClass:[TUISystemMessageCellData class]])
-        return; // 系统消息不响应
-
-    NSMutableArray *items = [NSMutableArray array];
-    if ([data isKindOfClass:[TUITextMessageCellData class]]) {
-        [items addObject:[[UIMenuItem alloc] initWithTitle:TUILocalizableString(Copy) action:@selector(onCopyMsg:)]];
-    }
-
-    [items addObject:[[UIMenuItem alloc] initWithTitle:TUILocalizableString(Delete) action:@selector(onDelete:)]];
-    V2TIMMessage *imMsg = data.innerMessage;
-    if(imMsg){
-        if([imMsg isSelf] && [[NSDate date] timeIntervalSinceDate:imMsg.timestamp] < 2 * 60){
-            [items addObject:[[UIMenuItem alloc] initWithTitle:TUILocalizableString(Revoke) action:@selector(onRevoke:)]];
-        }
-    }
-    if(imMsg.status == V2TIM_MSG_STATUS_SEND_FAIL){
-        [items addObject:[[UIMenuItem alloc] initWithTitle:TUILocalizableString(Re-send) action:@selector(onReSend:)]];
-    }
-
-
-    BOOL isFirstResponder = NO;
-    if(_delegate && [_delegate respondsToSelector:@selector(messageController:willShowMenuInCell:)]){
-        isFirstResponder = [_delegate messageController:self willShowMenuInCell:cell];
-    }
-    if(isFirstResponder){
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(menuDidHide:) name:UIMenuControllerDidHideMenuNotification object:nil];
-    }
-    else{
-        [self becomeFirstResponder];
-    }
-    UIMenuController *controller = [UIMenuController sharedMenuController];
-    controller.menuItems = items;
-    _menuUIMsg = data;
-    [controller setTargetRect:cell.container.bounds inView:cell.container];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [controller setMenuVisible:YES animated:YES];
-    });
+//    TUIMessageCellData *data = cell.messageData;
+//    if ([data isKindOfClass:[TUISystemMessageCellData class]])
+//        return; // 系统消息不响应
+//
+//    NSMutableArray *items = [NSMutableArray array];
+//    if ([data isKindOfClass:[TUITextMessageCellData class]]) {
+//        [items addObject:[[UIMenuItem alloc] initWithTitle:TUILocalizableString(Copy) action:@selector(onCopyMsg:)]];
+//    }
+//
+//    [items addObject:[[UIMenuItem alloc] initWithTitle:TUILocalizableString(Delete) action:@selector(onDelete:)]];
+//    V2TIMMessage *imMsg = data.innerMessage;
+//    if(imMsg){
+//        if([imMsg isSelf] && [[NSDate date] timeIntervalSinceDate:imMsg.timestamp] < 2 * 60){
+//            [items addObject:[[UIMenuItem alloc] initWithTitle:TUILocalizableString(Revoke) action:@selector(onRevoke:)]];
+//        }
+//    }
+//    if(imMsg.status == V2TIM_MSG_STATUS_SEND_FAIL){
+//        [items addObject:[[UIMenuItem alloc] initWithTitle:TUILocalizableString(Re-send) action:@selector(onReSend:)]];
+//    }
+//
+//
+//    BOOL isFirstResponder = NO;
+//    if(_delegate && [_delegate respondsToSelector:@selector(messageController:willShowMenuInCell:)]){
+//        isFirstResponder = [_delegate messageController:self willShowMenuInCell:cell];
+//    }
+//    if(isFirstResponder){
+//        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(menuDidHide:) name:UIMenuControllerDidHideMenuNotification object:nil];
+//    }
+//    else{
+//        [self becomeFirstResponder];
+//    }
+//    UIMenuController *controller = [UIMenuController sharedMenuController];
+//    controller.menuItems = items;
+//    _menuUIMsg = data;
+//    [controller setTargetRect:cell.container.bounds inView:cell.container];
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [controller setMenuVisible:YES animated:YES];
+//    });
 }
 
 - (void)onRetryMessage:(TUIMessageCell *)cell
