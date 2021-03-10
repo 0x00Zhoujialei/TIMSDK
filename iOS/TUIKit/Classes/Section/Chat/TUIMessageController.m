@@ -542,7 +542,7 @@
     } fail:^(int code, NSString *desc) {
         @strongify(self)
         dispatch_async(dispatch_get_main_queue(), ^{
-            if (code == 6014) {
+            if (code == 6014 || code == 6206) {
                 NSObject *delegate = (NSObject *)[UIApplication sharedApplication].delegate;
                 [delegate performSelector:@selector(presentReloginAlert)];
             } else {
