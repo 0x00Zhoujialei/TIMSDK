@@ -381,11 +381,21 @@
                     [self.navigationController pushViewController:(UIViewController *)vc animated:YES];
                 }
             } fail:^(int code, NSString *msg) {
-                [THelper makeToastError:code msg:msg];
+                if (code == 6014 || code == 6206) {
+                    NSObject *delegate = (NSObject *)[UIApplication sharedApplication].delegate;
+                    [delegate performSelector:@selector(presentReloginAlert)];
+                } else {
+                    [THelper makeToastError:code msg:msg];
+                }
             }];
         }
     } fail:^(int code, NSString *msg) {
-        [THelper makeToastError:code msg:msg];
+        if (code == 6014 || code == 6206) {
+            NSObject *delegate = (NSObject *)[UIApplication sharedApplication].delegate;
+            [delegate performSelector:@selector(presentReloginAlert)];
+        } else {
+            [THelper makeToastError:code msg:msg];
+        }
     }];
 }
 

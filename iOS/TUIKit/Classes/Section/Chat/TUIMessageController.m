@@ -177,7 +177,12 @@
         } fail:^(int code, NSString *msg) {
             @strongify(self)
             self.isLoadingMsg = NO;
-            [THelper makeToastError:code msg:msg];
+            if (code == 6014 || code == 6206) {
+                NSObject *delegate = (NSObject *)[UIApplication sharedApplication].delegate;
+                [delegate performSelector:@selector(presentReloginAlert)];
+            } else {
+                [THelper makeToastError:code msg:msg];
+            }
         }];
     }
     if (self.conversationData.groupID.length > 0) {
@@ -187,7 +192,12 @@
         } fail:^(int code, NSString *msg) {
             @strongify(self)
             self.isLoadingMsg = NO;
-            [THelper makeToastError:code msg:msg];
+            if (code == 6014 || code == 6206) {
+                NSObject *delegate = (NSObject *)[UIApplication sharedApplication].delegate;
+                [delegate performSelector:@selector(presentReloginAlert)];
+            } else {
+                [THelper makeToastError:code msg:msg];
+            }
         }];
     }
 }
@@ -897,7 +907,12 @@
             [self.navigationController pushViewController:(UIViewController *)vc animated:YES];
         }
     } fail:^(int code, NSString *msg) {
-        [THelper makeToastError:code msg:msg];
+        if (code == 6014 || code == 6206) {
+            NSObject *delegate = (NSObject *)[UIApplication sharedApplication].delegate;
+            [delegate performSelector:@selector(presentReloginAlert)];
+        } else {
+            [THelper makeToastError:code msg:msg];
+        }
     }];
 }
 
