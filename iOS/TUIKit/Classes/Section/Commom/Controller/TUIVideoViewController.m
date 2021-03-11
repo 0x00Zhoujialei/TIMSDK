@@ -104,10 +104,13 @@
         AVPlayer *p = [AVPlayer playerWithURL:[NSURL fileURLWithPath:path]];
         p;
     });
-    [self addChildViewController:vc];
-    [self.view addSubview:vc.view];
-    [vc.player play];
+    @weakify(self);
+    [self.navigationController presentViewController:vc animated:true completion:^{
+        @strongify(self);
+        [self.navigationController popViewControllerAnimated:true];
+    }];
     vc.view.frame = self.view.frame;
+    [vc.player play];
     self.progress.hidden = YES;
 }
 
