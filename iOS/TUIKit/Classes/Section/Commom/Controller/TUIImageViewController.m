@@ -82,7 +82,17 @@
         [_button addTarget:self action:@selector(downloadOrigin:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:_button];
     }
+    
+    UIButton *button = [UIButton new];
+    [self.view addSubview:button];
+    //    button.backgroundColor = [UIColor greenColor];
+    [button setImage:[UIImage imageNamed:@"back_white"] forState:UIControlStateNormal];
+    button.frame = CGRectMake(20, self.view.safeAreaInsets.top, 40, 40);
+    [button addTarget:self action:@selector(popAction) forControlEvents:UIControlEventTouchUpInside];
+}
 
+- (void)popAction {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)downloadOrigin:(id)sender
