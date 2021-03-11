@@ -81,8 +81,11 @@
         [_button.layer setMasksToBounds:YES];
         [_button addTarget:self action:@selector(downloadOrigin:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:_button];
-    }
-    
+    }   
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     UIButton *button = [UIButton new];
     [self.view addSubview:button];
     //    button.backgroundColor = [UIColor greenColor];

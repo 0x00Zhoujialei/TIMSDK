@@ -75,6 +75,10 @@
         [self addPlayer:path];
     }];
     
+}
+    
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     UIButton *button = [UIButton new];
     [self.view addSubview:button];
     //    button.backgroundColor = [UIColor greenColor];
