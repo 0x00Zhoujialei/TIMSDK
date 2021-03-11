@@ -381,7 +381,7 @@
                     [self.navigationController pushViewController:(UIViewController *)vc animated:YES];
                 }
             } fail:^(int code, NSString *msg) {
-                if (code == 6014 || code == 6206 || code == 6026 || code == 6208) {
+                if (code == 6014 || code == 6206 || code == 6026 || code == 6208 || (code >= 9000 && code <= 9999)) {
                     NSObject *delegate = (NSObject *)[UIApplication sharedApplication].delegate;
                     [delegate performSelector:@selector(presentReloginAlert)];
                 } else {
@@ -390,7 +390,7 @@
             }];
         }
     } fail:^(int code, NSString *msg) {
-        if (code == 6014 || code == 6206 || code == 6026 || code == 6208) {
+        if (code == 6014 || code == 6206 || code == 6026 || code == 6208 || (code >= 9000 && code <= 9999)) {
             NSObject *delegate = (NSObject *)[UIApplication sharedApplication].delegate;
             [delegate performSelector:@selector(presentReloginAlert)];
         } else {
