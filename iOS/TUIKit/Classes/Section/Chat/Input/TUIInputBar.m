@@ -54,6 +54,7 @@
     [_faceButton addTarget:self action:@selector(clickFaceBtn:) forControlEvents:UIControlEventTouchUpInside];
     [_faceButton setImage:[UIImage tk_imageNamed:@"ToolViewEmotion"] forState:UIControlStateNormal];
     [_faceButton setImage:[UIImage tk_imageNamed:@"ToolViewEmotionHL"] forState:UIControlStateHighlighted];
+    _faceButton.hidden = YES;
     [self addSubview:_faceButton];
 
     _keyboardButton = [[UIButton alloc] init];
@@ -107,7 +108,7 @@
     _faceButton.frame = CGRectMake(_moreButton.frame.origin.x - buttonSize.width - TTextView_Margin, buttonOriginY, buttonSize.width, buttonSize.height);
 
     CGFloat beginX = _micButton.frame.origin.x + _micButton.frame.size.width + TTextView_Margin;
-    CGFloat endX = _faceButton.frame.origin.x - TTextView_Margin;
+    CGFloat endX = _moreButton.frame.origin.x - TTextView_Margin;
     _recordButton.frame = CGRectMake(beginX, (TTextView_Height - TTextView_TextView_Height_Min) * 0.5, endX - beginX, TTextView_TextView_Height_Min);
     _inputTextView.frame = _recordButton.frame;
 }
