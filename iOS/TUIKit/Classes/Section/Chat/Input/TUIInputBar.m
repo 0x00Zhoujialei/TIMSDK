@@ -50,12 +50,11 @@
     [_micButton setImage:[UIImage tk_imageNamed:@"ToolViewInputVoiceHL"] forState:UIControlStateHighlighted];
     [self addSubview:_micButton];
 
-    _faceButton = [[UIButton alloc] init];
-    [_faceButton addTarget:self action:@selector(clickFaceBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [_faceButton setImage:[UIImage tk_imageNamed:@"ToolViewEmotion"] forState:UIControlStateNormal];
-    [_faceButton setImage:[UIImage tk_imageNamed:@"ToolViewEmotionHL"] forState:UIControlStateHighlighted];
-    _faceButton.hidden = YES;
-    [self addSubview:_faceButton];
+//    _faceButton = [[UIButton alloc] init];
+//    [_faceButton addTarget:self action:@selector(clickFaceBtn:) forControlEvents:UIControlEventTouchUpInside];
+//    [_faceButton setImage:[UIImage tk_imageNamed:@"ToolViewEmotion"] forState:UIControlStateNormal];
+//    [_faceButton setImage:[UIImage tk_imageNamed:@"ToolViewEmotionHL"] forState:UIControlStateHighlighted];
+//    [self addSubview:_faceButton];
 
     _keyboardButton = [[UIButton alloc] init];
     [_keyboardButton addTarget:self action:@selector(clickKeyboardBtn:) forControlEvents:UIControlEventTouchUpInside];
