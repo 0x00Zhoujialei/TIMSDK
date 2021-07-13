@@ -1,3 +1,5 @@
+## 注意, 根目录下面的TXIMSDK_TUIKit_iOS_Professional.podspec本质上只是./iOS/TXIMSDK_TUIKit_iOS_Professional.podspec的软链接(在命令行输入man ln查看ln的具体含义)
+
 公告：TUIKit Android 与 iOS 端开放 Pull Request，merge 成功后会在 README.md 上留下您的大名并超链到您的 Github 主页！
 
 ## 镜像下载
