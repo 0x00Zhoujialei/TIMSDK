@@ -19,7 +19,7 @@ Pod::Spec.new do |spec|
   spec.dependency 'SDWebImage','5.10.4'
   spec.dependency 'ReactiveObjC','3.1.1'
   spec.dependency 'Toast','4.0.0'
-  spec.dependency 'TXLiteAVSDK_Professional','7.8.9519'
+  spec.dependency 'TXLiteAVSDK_Professional','8.5.10022'
   spec.dependency 'TXIMSDK_iOS','5.1.56'
   
   spec.requires_arc = true
