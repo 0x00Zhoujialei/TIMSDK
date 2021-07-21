@@ -17,7 +17,7 @@ Pod::Spec.new do |spec|
   spec.dependency 'TXIMSDK_iOS', '5.1.56'
   spec.dependency 'TXLiteAVSDK_Professional', '7.8.9519'
   spec.dependency 'MMLayout','0.2.0'
-  spec.dependency 'SDWebImage','5.9.0'
+  spec.dependency 'SDWebImage','5.9.2'
   spec.dependency 'ReactiveObjC','3.1.1'
   spec.dependency 'Toast','4.0.0'
   spec.dependency 'Masonry', '1.1.0'
@@ -27,7 +27,7 @@ Pod::Spec.new do |spec|
 
   spec.requires_arc = true
 
-  spec.source = { :http => 'https://imsdk-1252463788.cos.ap-guangzhou.myqcloud.com/5.1.56/TIM_SDK_TUIKIT_live_iOS_latest_framework.zip'}
+  spec.source = { :http => 'git@code.aliyun.com:tc_vendor_ios/TIMSDK.git'}
   spec.source_files = '**/TUIKit_live/Classes/**/*.{h,m,mm}', '**/TUIKit_live/Classes/**/*.{h,c}'
   spec.resource = ['**/TUIKit_live/Resources/FilterResource.bundle', '**/TUIKit_live/Resources/*.xcassets',
     '**/TUIKit_live/Classes/Modules/BeautySettingPanel/Resources/*.{xcassets,mp4}', 

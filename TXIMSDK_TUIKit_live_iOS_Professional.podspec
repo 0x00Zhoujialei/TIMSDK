@@ -1,0 +1,1 @@
+./iOS/TXIMSDK_TUIKit_live_iOS_Professional.podspec
