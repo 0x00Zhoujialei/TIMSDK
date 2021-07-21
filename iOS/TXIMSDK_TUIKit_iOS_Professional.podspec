@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   spec.libraries    = 'stdc++'
 
   spec.dependency 'MMLayout','0.2.0'
-  spec.dependency 'SDWebImage','5.9.2'
+  spec.dependency 'SDWebImage','5.10.0'
   spec.dependency 'ReactiveObjC','3.1.1'
   spec.dependency 'Toast','4.0.0'
   spec.dependency 'TXLiteAVSDK_Professional','7.8.9519'
